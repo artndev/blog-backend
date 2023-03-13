@@ -1,0 +1,15 @@
+app.post('/auth/login', (req, res) => {
+    const token = jwt.sign(
+        {
+            email: req.body.email,
+            fullName: "Я",
+        },
+        'secret123'
+    );
+
+
+    res.json({
+        success: true,
+        token
+    });
+});
